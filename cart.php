@@ -32,7 +32,6 @@ $produk = query("SELECT * FROM produk");
         <table class="table-fill">
             <thead>
                 <tr>
-                    <th class="text-left">Gambar</th>
                     <th class="text-left">Nama Produk</th>
                     <th class="text-left">Harga</th>
                     <th class="text-left">Qty</th>
@@ -41,11 +40,10 @@ $produk = query("SELECT * FROM produk");
                 </tr>
             </thead>
             <tbody class="table-hover">
-                <?php if (isset($_SESSION['barang'])) : ?>
-                    <?php foreach ($_SESSION['barang'] as $row) : ?>
+                <?php if (isset($_SESSION['produk'])) : ?>
+                    <?php foreach ($_SESSION['produk'] as $row) : ?>
                         <tr>
-                            <td class="text-left"><img class="image__img" src="img/<?= $row["gambar"]; ?>" alt="" width="100"></td>
-                            <td class="text-left"><?= $row["nmproduk"]; ?></td>
+                            <td class="text-left"><?= $row["nama"]; ?></td>
                             <td class="text-left"><?= $row["harga"]; ?></td>
                             <td class="text-left"><?= $row["stok"]; ?></td>
                             <td class="text-left"><?= number_format($row['stok'] * $row['harga'], 0, ",", "."); ?></td>
