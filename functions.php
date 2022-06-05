@@ -1,7 +1,7 @@
 <?php
 
 // koneksi ke database
-$conn = mysqli_connect("localhost", "root", "", "uas");
+$conn = mysqli_connect("localhost", "root", "admin", "wusa", "3307");
 
 
 function query($query)
